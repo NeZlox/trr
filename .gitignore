@@ -1,0 +1,42 @@
+# Игнорировать node_modules на всех уровнях
+**/node_modules/
+
+# Игнорировать файлы логов
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# Игнорировать выходные данные сборки
+**/dist/
+#**/build/
+
+# next.js
+**/.next/
+**/out/
+
+# Игнорировать временные файлы и кеши
+**/.cache/
+**/.parcel-cache/
+**/tmp/
+**/.temp/
+
+# Игнорировать файлы конфигурации редакторов
+**/.vscode/
+**/.idea/
+
+# Игнорировать файлы окружения
+**/.env
+**/.env.local
+**/.env.development
+**/.env.production
+**/.env.test
+
+# Игнорировать виртуальные окружения и кеши Python
+**/__pycache__/
+**/venv/
+
+# Игнорировать Git
+**/.git/
+
+# Игнорировать файл README.md
+#**/README.md

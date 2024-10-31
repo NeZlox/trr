@@ -1,0 +1,1687 @@
+{
+  "contractName": "Poster",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "tag",
+          "type": "string"
+        }
+      ],
+      "name": "NewPost",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "posts",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "tag",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "tag",
+          "type": "string"
+        }
+      ],
+      "name": "post",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getPosts",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "tag",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Poster.Post[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"tag\",\"type\":\"string\"}],\"name\":\"NewPost\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"getPosts\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"tag\",\"type\":\"string\"}],\"internalType\":\"struct Poster.Post[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"tag\",\"type\":\"string\"}],\"name\":\"post\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"posts\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"tag\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Poster.sol\":\"Poster\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Poster.sol\":{\"keccak256\":\"0xfee4b55e5e23651c644e88d419fb89ac618d70d7b6a7fb37bcba0c03fe2aff86\",\"urls\":[\"bzz-raw://80ed361166e38b3595a6f35cee57be90f90177fa59f75f3c30d831a76048a922\",\"dweb:/ipfs/QmZB7sm8EACraRMMVugQ9HmEc4Mo2xLt84EJsBhToFXB3i\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610b57806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80630ae1b13d146100465780630b1e7f831461006257806341f3004a14610094575b600080fd5b610060600480360361005b919081019061068a565b6100b2565b005b61007c600480360361007791908101906106f6565b6101fc565b60405161008b93929190610910565b60405180910390f35b61009c610383565b6040516100a99190610955565b60405180910390f35b600060405180606001604052803373ffffffffffffffffffffffffffffffffffffffff168152602001848152602001838152509080600181540180825580915050906001820390600052602060002090600302016000909192909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101908051906020019061017392919061057c565b50604082015181600201908051906020019061019092919061057c565b50505050806040516101a291906108f9565b60405180910390203373ffffffffffffffffffffffffffffffffffffffff167f6c7f3182d7e4cb876251f9ae1489975fdbbf15d9f35d393f2ac9b1ff57cec69f846040516101f09190610977565b60405180910390a35050565b6000818154811061020957fe5b90600052602060002090600302016000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102db5780601f106102b0576101008083540402835291602001916102db565b820191906000526020600020905b8154815290600101906020018083116102be57829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103795780601f1061034e57610100808354040283529160200191610379565b820191906000526020600020905b81548152906001019060200180831161035c57829003601f168201915b5050505050905083565b60606000805480602002602001604051908101604052809291908181526020016000905b8282101561057357838290600052602060002090600302016040518060600160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104b95780601f1061048e576101008083540402835291602001916104b9565b820191906000526020600020905b81548152906001019060200180831161049c57829003601f168201915b50505050508152602001600282018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561055b5780601f106105305761010080835404028352916020019161055b565b820191906000526020600020905b81548152906001019060200180831161053e57829003601f168201915b505050505081525050815260200190600101906103a7565b50505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106105bd57805160ff19168380011785556105eb565b828001600101855582156105eb579182015b828111156105ea5782518255916020019190600101906105cf565b5b5090506105f891906105fc565b5090565b61061e91905b8082111561061a576000816000905550600101610602565b5090565b90565b600082601f83011261063257600080fd5b8135610645610640826109c6565b610999565b9150808252602083016020830185838301111561066157600080fd5b61066c838284610aaa565b50505092915050565b60008135905061068481610afd565b92915050565b6000806040838503121561069d57600080fd5b600083013567ffffffffffffffff8111156106b757600080fd5b6106c385828601610621565b925050602083013567ffffffffffffffff8111156106e057600080fd5b6106ec85828601610621565b9150509250929050565b60006020828403121561070857600080fd5b600061071684828501610675565b91505092915050565b600061072b83836108a2565b905092915050565b61073c81610a6e565b82525050565b61074b81610a6e565b82525050565b600061075c82610a02565b6107668185610a30565b935083602082028501610778856109f2565b8060005b858110156107b45784840389528151610795858261071f565b94506107a083610a23565b925060208a0199505060018101905061077c565b50829750879550505050505092915050565b60006107d182610a18565b6107db8185610a52565b93506107eb818560208601610ab9565b6107f481610aec565b840191505092915050565b600061080a82610a18565b6108148185610a63565b9350610824818560208601610ab9565b80840191505092915050565b600061083b82610a0d565b6108458185610a41565b9350610855818560208601610ab9565b61085e81610aec565b840191505092915050565b600061087482610a0d565b61087e8185610a52565b935061088e818560208601610ab9565b61089781610aec565b840191505092915050565b60006060830160008301516108ba6000860182610733565b50602083015184820360208601526108d28282610830565b915050604083015184820360408601526108ec8282610830565b9150508091505092915050565b600061090582846107ff565b915081905092915050565b60006060820190506109256000830186610742565b81810360208301526109378185610869565b9050818103604083015261094b8184610869565b9050949350505050565b6000602082019050818103600083015261096f8184610751565b905092915050565b6000602082019050818103600083015261099181846107c6565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156109bc57600080fd5b8060405250919050565b600067ffffffffffffffff8211156109dd57600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b600082825260208201905092915050565b600081905092915050565b6000610a7982610a80565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b83811015610ad7578082015181840152602081019050610abc565b83811115610ae6576000848401525b50505050565b6000601f19601f8301169050919050565b610b0681610aa0565b8114610b1157600080fd5b5056fea365627a7a7231582044a135c803b89f18280de3478d407dfe1e1780d8639b989cedbc75994c01082f6c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80630ae1b13d146100465780630b1e7f831461006257806341f3004a14610094575b600080fd5b610060600480360361005b919081019061068a565b6100b2565b005b61007c600480360361007791908101906106f6565b6101fc565b60405161008b93929190610910565b60405180910390f35b61009c610383565b6040516100a99190610955565b60405180910390f35b600060405180606001604052803373ffffffffffffffffffffffffffffffffffffffff168152602001848152602001838152509080600181540180825580915050906001820390600052602060002090600302016000909192909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101908051906020019061017392919061057c565b50604082015181600201908051906020019061019092919061057c565b50505050806040516101a291906108f9565b60405180910390203373ffffffffffffffffffffffffffffffffffffffff167f6c7f3182d7e4cb876251f9ae1489975fdbbf15d9f35d393f2ac9b1ff57cec69f846040516101f09190610977565b60405180910390a35050565b6000818154811061020957fe5b90600052602060002090600302016000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102db5780601f106102b0576101008083540402835291602001916102db565b820191906000526020600020905b8154815290600101906020018083116102be57829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103795780601f1061034e57610100808354040283529160200191610379565b820191906000526020600020905b81548152906001019060200180831161035c57829003601f168201915b5050505050905083565b60606000805480602002602001604051908101604052809291908181526020016000905b8282101561057357838290600052602060002090600302016040518060600160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104b95780601f1061048e576101008083540402835291602001916104b9565b820191906000526020600020905b81548152906001019060200180831161049c57829003601f168201915b50505050508152602001600282018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561055b5780601f106105305761010080835404028352916020019161055b565b820191906000526020600020905b81548152906001019060200180831161053e57829003601f168201915b505050505081525050815260200190600101906103a7565b50505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106105bd57805160ff19168380011785556105eb565b828001600101855582156105eb579182015b828111156105ea5782518255916020019190600101906105cf565b5b5090506105f891906105fc565b5090565b61061e91905b8082111561061a576000816000905550600101610602565b5090565b90565b600082601f83011261063257600080fd5b8135610645610640826109c6565b610999565b9150808252602083016020830185838301111561066157600080fd5b61066c838284610aaa565b50505092915050565b60008135905061068481610afd565b92915050565b6000806040838503121561069d57600080fd5b600083013567ffffffffffffffff8111156106b757600080fd5b6106c385828601610621565b925050602083013567ffffffffffffffff8111156106e057600080fd5b6106ec85828601610621565b9150509250929050565b60006020828403121561070857600080fd5b600061071684828501610675565b91505092915050565b600061072b83836108a2565b905092915050565b61073c81610a6e565b82525050565b61074b81610a6e565b82525050565b600061075c82610a02565b6107668185610a30565b935083602082028501610778856109f2565b8060005b858110156107b45784840389528151610795858261071f565b94506107a083610a23565b925060208a0199505060018101905061077c565b50829750879550505050505092915050565b60006107d182610a18565b6107db8185610a52565b93506107eb818560208601610ab9565b6107f481610aec565b840191505092915050565b600061080a82610a18565b6108148185610a63565b9350610824818560208601610ab9565b80840191505092915050565b600061083b82610a0d565b6108458185610a41565b9350610855818560208601610ab9565b61085e81610aec565b840191505092915050565b600061087482610a0d565b61087e8185610a52565b935061088e818560208601610ab9565b61089781610aec565b840191505092915050565b60006060830160008301516108ba6000860182610733565b50602083015184820360208601526108d28282610830565b915050604083015184820360408601526108ec8282610830565b9150508091505092915050565b600061090582846107ff565b915081905092915050565b60006060820190506109256000830186610742565b81810360208301526109378185610869565b9050818103604083015261094b8184610869565b9050949350505050565b6000602082019050818103600083015261096f8184610751565b905092915050565b6000602082019050818103600083015261099181846107c6565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156109bc57600080fd5b8060405250919050565b600067ffffffffffffffff8211156109dd57600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b600082825260208201905092915050565b600081905092915050565b6000610a7982610a80565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b83811015610ad7578082015181840152602081019050610abc565b83811115610ae6576000848401525b50505050565b6000601f19601f8301169050919050565b610b0681610aa0565b8114610b1157600080fd5b5056fea365627a7a7231582044a135c803b89f18280de3478d407dfe1e1780d8639b989cedbc75994c01082f6c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "101:883:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;101:883:0;;;;;;;",
+  "deployedSourceMap": "101:883:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;101:883:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;560:261;;;;;;;;;;;;;;;;:::i;:::-;;271:19;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;897:85;;;:::i;:::-;;;;;;;;;;;;;;;;560:261;679:5;690:30;;;;;;;;695:10;690:30;;;;;;707:7;690:30;;;;716:3;690:30;;;679:42;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;679:42:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;810:3;781:33;;;;;;;;;;;;;;;789:10;781:33;;;801:7;781:33;;;;;;;;;;;;;;;560:261;;:::o;271:19::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;897:85::-;938:13;970:5;963:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;897:85;:::o;101:883::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6:442:-1:-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:130;;536:6;523:20;514:29;;548:33;575:5;548:33;;;508:78;;;;;593:578;;;734:2;722:9;713:7;709:23;705:32;702:2;;;750:1;747;740:12;702:2;813:1;802:9;798:17;785:31;836:18;828:6;825:30;822:2;;;868:1;865;858:12;822:2;888:63;943:7;934:6;923:9;919:22;888:63;;;878:73;;764:193;1016:2;1005:9;1001:18;988:32;1040:18;1032:6;1029:30;1026:2;;;1072:1;1069;1062:12;1026:2;1092:63;1147:7;1138:6;1127:9;1123:22;1092:63;;;1082:73;;967:194;696:475;;;;;;1178:241;;1282:2;1270:9;1261:7;1257:23;1253:32;1250:2;;;1298:1;1295;1288:12;1250:2;1333:1;1350:53;1395:7;1386:6;1375:9;1371:22;1350:53;;;1340:63;;1312:97;1244:175;;;;;1427:217;;1558:80;1634:3;1626:6;1558:80;;;1544:94;;1537:107;;;;;1652:103;1725:24;1743:5;1725:24;;;1720:3;1713:37;1707:48;;;1762:113;1845:24;1863:5;1845:24;;;1840:3;1833:37;1827:48;;;1935:968;;2110:69;2173:5;2110:69;;;2192:101;2286:6;2281:3;2192:101;;;2185:108;;2316:3;2358:4;2350:6;2346:17;2341:3;2337:27;2385:71;2450:5;2385:71;;;2476:7;2504:1;2489:375;2514:6;2511:1;2508:13;2489:375;;;2576:9;2570:4;2566:20;2561:3;2554:33;2621:6;2615:13;2643:94;2732:4;2717:13;2643:94;;;2635:102;;2754:75;2822:6;2754:75;;;2744:85;;2852:4;2847:3;2843:14;2836:21;;2546:318;2536:1;2533;2529:9;2524:14;;2489:375;;;2493:14;2877:4;2870:11;;2894:3;2887:10;;2089:814;;;;;;;;;;2911:347;;3023:39;3056:5;3023:39;;;3074:71;3138:6;3133:3;3074:71;;;3067:78;;3150:52;3195:6;3190:3;3183:4;3176:5;3172:16;3150:52;;;3223:29;3245:6;3223:29;;;3218:3;3214:39;3207:46;;3003:255;;;;;;3265:360;;3395:39;3428:5;3395:39;;;3446:89;3528:6;3523:3;3446:89;;;3439:96;;3540:52;3585:6;3580:3;3573:4;3566:5;3562:16;3540:52;;;3613:6;3608:3;3604:16;3597:23;;3375:250;;;;;;3632:319;;3730:35;3759:5;3730:35;;;3777:61;3831:6;3826:3;3777:61;;;3770:68;;3843:52;3888:6;3883:3;3876:4;3869:5;3865:16;3843:52;;;3916:29;3938:6;3916:29;;;3911:3;3907:39;3900:46;;3710:241;;;;;;3958:339;;4066:35;4095:5;4066:35;;;4113:71;4177:6;4172:3;4113:71;;;4106:78;;4189:52;4234:6;4229:3;4222:4;4215:5;4211:16;4189:52;;;4262:29;4284:6;4262:29;;;4257:3;4253:39;4246:46;;4046:251;;;;;;4351:769;;4476:4;4471:3;4467:14;4559:4;4552:5;4548:16;4542:23;4571:63;4628:4;4623:3;4619:14;4605:12;4571:63;;;4496:144;4716:4;4709:5;4705:16;4699:23;4768:3;4762:4;4758:14;4751:4;4746:3;4742:14;4735:38;4788:69;4852:4;4838:12;4788:69;;;4780:77;;4650:219;4941:4;4934:5;4930:16;4924:23;4993:3;4987:4;4983:14;4976:4;4971:3;4967:14;4960:38;5013:69;5077:4;5063:12;5013:69;;;5005:77;;4879:215;5111:4;5104:11;;4449:671;;;;;;5127:266;;5273:95;5364:3;5355:6;5273:95;;;5266:102;;5385:3;5378:10;;5254:139;;;;;5400:595;;5606:2;5595:9;5591:18;5583:26;;5620:71;5688:1;5677:9;5673:17;5664:6;5620:71;;;5739:9;5733:4;5729:20;5724:2;5713:9;5709:18;5702:48;5764:74;5833:4;5824:6;5764:74;;;5756:82;;5886:9;5880:4;5876:20;5871:2;5860:9;5856:18;5849:48;5911:74;5980:4;5971:6;5911:74;;;5903:82;;5577:418;;;;;;;6002:421;;6200:2;6189:9;6185:18;6177:26;;6250:9;6244:4;6240:20;6236:1;6225:9;6221:17;6214:47;6275:138;6408:4;6399:6;6275:138;;;6267:146;;6171:252;;;;;6430:301;;6568:2;6557:9;6553:18;6545:26;;6618:9;6612:4;6608:20;6604:1;6593:9;6589:17;6582:47;6643:78;6716:4;6707:6;6643:78;;;6635:86;;6539:192;;;;;6738:256;;6800:2;6794:9;6784:19;;6838:4;6830:6;6826:17;6937:6;6925:10;6922:22;6901:18;6889:10;6886:34;6883:62;6880:2;;;6958:1;6955;6948:12;6880:2;6978:10;6974:2;6967:22;6778:216;;;;;7001:322;;7145:18;7137:6;7134:30;7131:2;;;7177:1;7174;7167:12;7131:2;7244:4;7240:9;7233:4;7225:6;7221:17;7217:33;7209:41;;7308:4;7302;7298:15;7290:23;;7068:255;;;;7330:166;;7431:3;7423:11;;7469:4;7464:3;7460:14;7452:22;;7417:79;;;;7503:152;;7627:5;7621:12;7611:22;;7592:63;;;;7662:118;;7752:5;7746:12;7736:22;;7717:63;;;;7787:122;;7881:5;7875:12;7865:22;;7846:63;;;;7916:123;;8029:4;8024:3;8020:14;8012:22;;8006:33;;;;8047:193;;8192:6;8187:3;8180:19;8229:4;8224:3;8220:14;8205:29;;8173:67;;;;;8249:153;;8354:6;8349:3;8342:19;8391:4;8386:3;8382:14;8367:29;;8335:67;;;;;8411:163;;8526:6;8521:3;8514:19;8563:4;8558:3;8554:14;8539:29;;8507:67;;;;;8583:145;;8719:3;8704:18;;8697:31;;;;;8736:91;;8798:24;8816:5;8798:24;;;8787:35;;8781:46;;;;8834:121;;8907:42;8900:5;8896:54;8885:65;;8879:76;;;;8962:72;;9024:5;9013:16;;9007:27;;;;9042:145;9123:6;9118:3;9113;9100:30;9179:1;9170:6;9165:3;9161:16;9154:27;9093:94;;;;9196:268;9261:1;9268:101;9282:6;9279:1;9276:13;9268:101;;;9358:1;9353:3;9349:11;9343:18;9339:1;9334:3;9330:11;9323:39;9304:2;9301:1;9297:10;9292:15;;9268:101;;;9384:6;9381:1;9378:13;9375:2;;;9449:1;9440:6;9435:3;9431:16;9424:27;9375:2;9245:219;;;;;9472:97;;9560:2;9556:7;9551:2;9544:5;9540:14;9536:28;9526:38;;9520:49;;;;9577:117;9646:24;9664:5;9646:24;;;9639:5;9636:35;9626:2;;9685:1;9682;9675:12;9626:2;9620:74;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21 <0.9.0;\npragma experimental ABIEncoderV2;\n\n\ncontract Poster {\n    struct Post {\n        address user;\n        string content;\n        string tag;\n    }\n\n    // Массив для хранения постов\n    Post[] public posts;\n\n    // Событие, которое будет эмитироваться при создании нового поста\n    event NewPost(address indexed user, string content, string indexed tag);\n\n    // Функция для публикации поста\n    function post(string memory content, string memory tag) public {\n        // Создаем новый пост\n        posts.push(Post(msg.sender, content, tag));\n        // Эмитируем событие\n        emit NewPost(msg.sender, content, tag);\n    }\n\n    // Функция для получения всех постов\n    function getPosts() public view returns (Post[] memory) {\n        return posts;\n    }\n}",
+  "sourcePath": "/home/nezlox/trr/2lb/poster-contract/contracts/Poster.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Poster.sol",
+    "exportedSymbols": {
+      "Poster": [
+        56
+      ]
+    },
+    "id": 57,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "65:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 56,
+        "linearizedBaseContracts": [
+          56
+        ],
+        "name": "Poster",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Poster.Post",
+            "id": 9,
+            "members": [
+              {
+                "constant": false,
+                "id": 4,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "145:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 3,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "145:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "167:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "167:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "name": "tag",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "191:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "191:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Post",
+            "nodeType": "StructDefinition",
+            "scope": 56,
+            "src": "123:85:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 12,
+            "name": "posts",
+            "nodeType": "VariableDeclaration",
+            "scope": 56,
+            "src": "271:19:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Post_$9_storage_$dyn_storage",
+              "typeString": "struct Poster.Post[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 10,
+                "name": "Post",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 9,
+                "src": "271:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Post_$9_storage_ptr",
+                  "typeString": "struct Poster.Post"
+                }
+              },
+              "id": 11,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "271:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Post_$9_storage_$dyn_storage_ptr",
+                "typeString": "struct Poster.Post[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 20,
+            "name": "NewPost",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14,
+                  "indexed": true,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "435:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "457:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "457:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18,
+                  "indexed": true,
+                  "name": "tag",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "473:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "473:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:58:0"
+            },
+            "src": "421:72:0"
+          },
+          {
+            "body": {
+              "id": 45,
+              "nodeType": "Block",
+              "src": "623:198:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 31,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 94,
+                              "src": "695:3:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 32,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "695:10:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 33,
+                            "name": "content",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 22,
+                            "src": "707:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 34,
+                            "name": "tag",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24,
+                            "src": "716:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          ],
+                          "id": 30,
+                          "name": "Post",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9,
+                          "src": "690:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Post_$9_storage_ptr_$",
+                            "typeString": "type(struct Poster.Post storage pointer)"
+                          }
+                        },
+                        "id": 35,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "690:30:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Post_$9_memory",
+                          "typeString": "struct Poster.Post memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Post_$9_memory",
+                          "typeString": "struct Poster.Post memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 27,
+                        "name": "posts",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12,
+                        "src": "679:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Post_$9_storage_$dyn_storage",
+                          "typeString": "struct Poster.Post storage ref[] storage ref"
+                        }
+                      },
+                      "id": 29,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "679:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Post_$9_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Poster.Post storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "679:42:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 37,
+                  "nodeType": "ExpressionStatement",
+                  "src": "679:42:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 39,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 94,
+                          "src": "789:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 40,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "789:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 41,
+                        "name": "content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 22,
+                        "src": "801:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 42,
+                        "name": "tag",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24,
+                        "src": "810:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 38,
+                      "name": "NewPost",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 20,
+                      "src": "781:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,string memory,string memory)"
+                      }
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "781:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "EmitStatement",
+                  "src": "776:38:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 46,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "post",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 25,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "574:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "574:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24,
+                  "name": "tag",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "597:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 23,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "597:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "573:42:0"
+            },
+            "returnParameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "623:0:0"
+            },
+            "scope": 56,
+            "src": "560:261:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 54,
+              "nodeType": "Block",
+              "src": "953:29:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 52,
+                    "name": "posts",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12,
+                    "src": "970:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Post_$9_storage_$dyn_storage",
+                      "typeString": "struct Poster.Post storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 51,
+                  "id": 53,
+                  "nodeType": "Return",
+                  "src": "963:12:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 55,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPosts",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 47,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "914:2:0"
+            },
+            "returnParameters": {
+              "id": 51,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 50,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 55,
+                  "src": "938:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Post_$9_memory_$dyn_memory_ptr",
+                    "typeString": "struct Poster.Post[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 48,
+                      "name": "Post",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 9,
+                      "src": "938:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Post_$9_storage_ptr",
+                        "typeString": "struct Poster.Post"
+                      }
+                    },
+                    "id": 49,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "938:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Post_$9_storage_$dyn_storage_ptr",
+                      "typeString": "struct Poster.Post[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "937:15:0"
+            },
+            "scope": 56,
+            "src": "897:85:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 57,
+        "src": "101:883:0"
+      }
+    ],
+    "src": "32:952:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Poster.sol",
+      "exportedSymbols": {
+        "Poster": [
+          56
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".21",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "32:32:0"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 2,
+        "name": "PragmaDirective",
+        "src": "65:33:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            56
+          ],
+          "name": "Poster",
+          "scope": 57
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Poster.Post",
+              "name": "Post",
+              "scope": 56,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "user",
+                  "scope": 9,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 3,
+                    "name": "ElementaryTypeName",
+                    "src": "145:7:0"
+                  }
+                ],
+                "id": 4,
+                "name": "VariableDeclaration",
+                "src": "145:12:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "content",
+                  "scope": 9,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 5,
+                    "name": "ElementaryTypeName",
+                    "src": "167:6:0"
+                  }
+                ],
+                "id": 6,
+                "name": "VariableDeclaration",
+                "src": "167:14:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "tag",
+                  "scope": 9,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 7,
+                    "name": "ElementaryTypeName",
+                    "src": "191:6:0"
+                  }
+                ],
+                "id": 8,
+                "name": "VariableDeclaration",
+                "src": "191:10:0"
+              }
+            ],
+            "id": 9,
+            "name": "StructDefinition",
+            "src": "123:85:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "posts",
+              "scope": 56,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct Poster.Post[]",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "struct Poster.Post[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Post",
+                      "referencedDeclaration": 9,
+                      "type": "struct Poster.Post"
+                    },
+                    "id": 10,
+                    "name": "UserDefinedTypeName",
+                    "src": "271:4:0"
+                  }
+                ],
+                "id": 11,
+                "name": "ArrayTypeName",
+                "src": "271:6:0"
+              }
+            ],
+            "id": 12,
+            "name": "VariableDeclaration",
+            "src": "271:19:0"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "NewPost"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "user",
+                      "scope": 20,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 13,
+                        "name": "ElementaryTypeName",
+                        "src": "435:7:0"
+                      }
+                    ],
+                    "id": 14,
+                    "name": "VariableDeclaration",
+                    "src": "435:20:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "content",
+                      "scope": 20,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 15,
+                        "name": "ElementaryTypeName",
+                        "src": "457:6:0"
+                      }
+                    ],
+                    "id": 16,
+                    "name": "VariableDeclaration",
+                    "src": "457:14:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "tag",
+                      "scope": 20,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 17,
+                        "name": "ElementaryTypeName",
+                        "src": "473:6:0"
+                      }
+                    ],
+                    "id": 18,
+                    "name": "VariableDeclaration",
+                    "src": "473:18:0"
+                  }
+                ],
+                "id": 19,
+                "name": "ParameterList",
+                "src": "434:58:0"
+              }
+            ],
+            "id": 20,
+            "name": "EventDefinition",
+            "src": "421:72:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "post",
+              "scope": 56,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "content",
+                      "scope": 46,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 21,
+                        "name": "ElementaryTypeName",
+                        "src": "574:6:0"
+                      }
+                    ],
+                    "id": 22,
+                    "name": "VariableDeclaration",
+                    "src": "574:21:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "tag",
+                      "scope": 46,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 23,
+                        "name": "ElementaryTypeName",
+                        "src": "597:6:0"
+                      }
+                    ],
+                    "id": 24,
+                    "name": "VariableDeclaration",
+                    "src": "597:17:0"
+                  }
+                ],
+                "id": 25,
+                "name": "ParameterList",
+                "src": "573:42:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 26,
+                "name": "ParameterList",
+                "src": "623:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_Post_$9_memory",
+                                  "typeString": "struct Poster.Post memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (struct Poster.Post storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 12,
+                                  "type": "struct Poster.Post storage ref[] storage ref",
+                                  "value": "posts"
+                                },
+                                "id": 27,
+                                "name": "Identifier",
+                                "src": "679:5:0"
+                              }
+                            ],
+                            "id": 29,
+                            "name": "MemberAccess",
+                            "src": "679:10:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct Poster.Post memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address_payable",
+                                      "typeString": "address payable"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 9,
+                                  "type": "type(struct Poster.Post storage pointer)",
+                                  "value": "Post"
+                                },
+                                "id": 30,
+                                "name": "Identifier",
+                                "src": "690:4:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address payable"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 94,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 31,
+                                    "name": "Identifier",
+                                    "src": "695:3:0"
+                                  }
+                                ],
+                                "id": 32,
+                                "name": "MemberAccess",
+                                "src": "695:10:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 22,
+                                  "type": "string memory",
+                                  "value": "content"
+                                },
+                                "id": 33,
+                                "name": "Identifier",
+                                "src": "707:7:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 24,
+                                  "type": "string memory",
+                                  "value": "tag"
+                                },
+                                "id": 34,
+                                "name": "Identifier",
+                                "src": "716:3:0"
+                              }
+                            ],
+                            "id": 35,
+                            "name": "FunctionCall",
+                            "src": "690:30:0"
+                          }
+                        ],
+                        "id": 36,
+                        "name": "FunctionCall",
+                        "src": "679:42:0"
+                      }
+                    ],
+                    "id": 37,
+                    "name": "ExpressionStatement",
+                    "src": "679:42:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 20,
+                              "type": "function (address,string memory,string memory)",
+                              "value": "NewPost"
+                            },
+                            "id": 38,
+                            "name": "Identifier",
+                            "src": "781:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 94,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 39,
+                                "name": "Identifier",
+                                "src": "789:3:0"
+                              }
+                            ],
+                            "id": 40,
+                            "name": "MemberAccess",
+                            "src": "789:10:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 22,
+                              "type": "string memory",
+                              "value": "content"
+                            },
+                            "id": 41,
+                            "name": "Identifier",
+                            "src": "801:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 24,
+                              "type": "string memory",
+                              "value": "tag"
+                            },
+                            "id": 42,
+                            "name": "Identifier",
+                            "src": "810:3:0"
+                          }
+                        ],
+                        "id": 43,
+                        "name": "FunctionCall",
+                        "src": "781:33:0"
+                      }
+                    ],
+                    "id": 44,
+                    "name": "EmitStatement",
+                    "src": "776:38:0"
+                  }
+                ],
+                "id": 45,
+                "name": "Block",
+                "src": "623:198:0"
+              }
+            ],
+            "id": 46,
+            "name": "FunctionDefinition",
+            "src": "560:261:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPosts",
+              "scope": 56,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 47,
+                "name": "ParameterList",
+                "src": "914:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 55,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Poster.Post[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "struct Poster.Post[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Post",
+                              "referencedDeclaration": 9,
+                              "type": "struct Poster.Post"
+                            },
+                            "id": 48,
+                            "name": "UserDefinedTypeName",
+                            "src": "938:4:0"
+                          }
+                        ],
+                        "id": 49,
+                        "name": "ArrayTypeName",
+                        "src": "938:6:0"
+                      }
+                    ],
+                    "id": 50,
+                    "name": "VariableDeclaration",
+                    "src": "938:13:0"
+                  }
+                ],
+                "id": 51,
+                "name": "ParameterList",
+                "src": "937:15:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 51
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 12,
+                          "type": "struct Poster.Post storage ref[] storage ref",
+                          "value": "posts"
+                        },
+                        "id": 52,
+                        "name": "Identifier",
+                        "src": "970:5:0"
+                      }
+                    ],
+                    "id": 53,
+                    "name": "Return",
+                    "src": "963:12:0"
+                  }
+                ],
+                "id": 54,
+                "name": "Block",
+                "src": "953:29:0"
+              }
+            ],
+            "id": 55,
+            "name": "FunctionDefinition",
+            "src": "897:85:0"
+          }
+        ],
+        "id": 56,
+        "name": "ContractDefinition",
+        "src": "101:883:0"
+      }
+    ],
+    "id": 57,
+    "name": "SourceUnit",
+    "src": "32:952:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "12": {
+      "events": {},
+      "links": {},
+      "address": "0xC6841e3CB124cB6a506BbbB68E0Ee2bD5083c21A",
+      "transactionHash": "0x0df5741d407c667a08a0c01de7e36ba5dec047eb9a6e1680c7fe732564ef8351",
+      "db": {
+        "network": {
+          "id": "0xec6819342cb49b91162c9b6575691d878b05415b684345c4d6cdf0ac6bf9b377"
+        },
+        "contractInstance": {
+          "id": "0x7b446d31a20323daf8bd2abd45439a3df9c2c39e55e2caf74afc406970e96f56"
+        }
+      },
+      "callBytecode": {
+        "linkReferences": []
+      },
+      "createBytecode": {
+        "linkReferences": []
+      }
+    },
+    "80002": {
+      "events": {},
+      "links": {},
+      "address": "0x41375dBdAC55540b60765CAB72Ac2E8707334220",
+      "transactionHash": "0x8dc8d3fb322ff2fa660a7d87487e236c714c421d4e2a74c03ec03fbd9bf716a2",
+      "db": {
+        "network": {
+          "id": "0x39f87a29fec95bef31ec6b868e764b0a6a51d9f140a9c75afcd74a3b2c23b491"
+        },
+        "contractInstance": {
+          "id": "0xa1d4f61afca3ce531ba648450646769c2dd18cef7152bfd93e66ee78379d343d"
+        }
+      },
+      "callBytecode": {
+        "linkReferences": []
+      },
+      "createBytecode": {
+        "linkReferences": []
+      }
+    }
+  },
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-10-18T11:09:13.092Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  },
+  "db": {
+    "callBytecode": {
+      "id": "0x3c78b4c1562fdb73aacf1c76fbe4883523cd48ffb5a64eb108fdbfd513f7d631"
+    },
+    "createBytecode": {
+      "id": "0x9a09cea112cfa5d4c22341071fcb83aeb7d445354554a6a76365b6e1a4ad8d78"
+    },
+    "contract": {
+      "id": "0x77aa613e9ef9008822ea10ff95c4df0c3b83694aff3e28b5751b949de665b4bd"
+    }
+  }
+}
